@@ -102,6 +102,16 @@ def parse_args():
     #Calculate and Print Cache stats
     cache_info( cache_size, block_size, associativity, replacement )
 
-#print team information
-print( "Cache Simulator CS3853 Summer 2020 - Group #13\n" )
-parse_args()
+"""
+Function: main
+
+Purpose:
+    Entrypoint to the program
+"""
+def main():
+    #print team information
+    print( "Cache Simulator CS3853 Summer 2020 - Group #13\n" )
+    parse_args()
+
+if __name__=="__main__":
+    main()
