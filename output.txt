@@ -1,0 +1,121 @@
+tylerdumas@Tylers-MacBook-Pro:~/Classwork/Summer2020/Architecture/CS3853-team13-project$ python3 main.py -f Trace1.trc -s 512 -b 16 -a 2 -r RND
+Cache Simulator CS3853 Summer 2020 - Group #13
+
+Trace File: Trace1.trc
+
+***** Cache Input Parameters *****
+Cache Size:             512KB
+Block Size:             16 bytes
+Associativity:          2
+Replacement Policy:     Random
+
+***** Cache Calculated Values *****
+Total # Blocks:         32768.0
+Tag Size:               12.0
+Index Size:             16.0
+Total Rows:             16384.0
+Overhead Size:          53248.0 bytes
+Implementation Size:    564.0KB (577536.0bytes)
+Total Cost:             39.48
+0x7c81eb33 (01)
+0x7c81eb34 (01)
+0x7c81eb35 (03)
+0x78158e69 (01)
+0x78158e6a (03)
+0x01763891 (01)
+0x01763892 (01)
+0x01763893 (01)
+0x01763894 (01)
+0x01763895 (01)
+0x01763896 (01)
+0x01763897 (01)
+0x01763898 (01)
+0x01763899 (01)
+0x0176389a (01)
+0x0176389b (01)
+0x0176389c (01)
+0x0176389d (01)
+0x0176389e (01)
+0x0176389f (01)
+
+
+tylerdumas@Tylers-MacBook-Pro:~/Classwork/Summer2020/Architecture/CS3853-team13-project$ python3 main.py -f Trace1.trc -s 128 -b 16 -a 8 -r RR
+Cache Simulator CS3853 Summer 2020 - Group #13
+
+Trace File: Trace1.trc
+
+***** Cache Input Parameters *****
+Cache Size:             128KB
+Block Size:             16 bytes
+Associativity:          8
+Replacement Policy:     Round Robin
+
+***** Cache Calculated Values *****
+Total # Blocks:         8192.0
+Tag Size:               12.0
+Index Size:             16.0
+Total Rows:             1024.0
+Overhead Size:          13312.0 bytes
+Implementation Size:    141.0KB (144384.0bytes)
+Total Cost:             9.87
+0x7c81eb33 (01)
+0x7c81eb34 (01)
+0x7c81eb35 (03)
+0x78158e69 (01)
+0x78158e6a (03)
+0x01763891 (01)
+0x01763892 (01)
+0x01763893 (01)
+0x01763894 (01)
+0x01763895 (01)
+0x01763896 (01)
+0x01763897 (01)
+0x01763898 (01)
+0x01763899 (01)
+0x0176389a (01)
+0x0176389b (01)
+0x0176389c (01)
+0x0176389d (01)
+0x0176389e (01)
+0x0176389f (01)
+
+
+tylerdumas@Tylers-MacBook-Pro:~/Classwork/Summer2020/Architecture/CS3853-team13-project$ python3 main.py -f Trace1.trc -s 1024 -b 16 -a 4 -r RR
+Cache Simulator CS3853 Summer 2020 - Group #13
+
+Trace File: Trace1.trc
+
+***** Cache Input Parameters *****
+Cache Size:             1024KB
+Block Size:             16 bytes
+Associativity:          4
+Replacement Policy:     Round Robin
+
+***** Cache Calculated Values *****
+Total # Blocks:         65536.0
+Tag Size:               10.0
+Index Size:             18.0
+Total Rows:             16384.0
+Overhead Size:          90112.0 bytes
+Implementation Size:    1112.0KB (1138688.0bytes)
+Total Cost:             77.84
+0x7c81eb33 (01)
+0x7c81eb34 (01)
+0x7c81eb35 (03)
+0x78158e69 (01)
+0x78158e6a (03)
+0x01763891 (01)
+0x01763892 (01)
+0x01763893 (01)
+0x01763894 (01)
+0x01763895 (01)
+0x01763896 (01)
+0x01763897 (01)
+0x01763898 (01)
+0x01763899 (01)
+0x0176389a (01)
+0x0176389b (01)
+0x0176389c (01)
+0x0176389d (01)
+0x0176389e (01)
+0x0176389f (01)
