@@ -103,6 +103,40 @@ def parse_args():
     cache_info( cache_size, block_size, associativity, replacement )
 
 """
+Function: parse_trc_file
+
+Purpose:
+    For M1, it simply reads each line of the trace file,
+    parses it, and prints the address instruction and length
+    in the format 0x0000000 (length)
+
+Notes:
+    For M1, this only reads 20 lines
+"""
+def parse_trc_file( filename ):
+
+    #Check that trace file exists
+    if not os.path.isfile( filename ):
+        print( "Error: the trace file does not exist" )
+        sys.exit( -1 )
+
+    try:    #try opening the file and catch any IO exception
+        with open( filename, 'r' ) as tracefile:   
+            line = tracefile.readline()     
+            cnt = 0
+            while line and cnt < 20:    #read until EOF or until line 20
+                tokens = line.split()   #tokenize the line into a list of strings
+                if len(tokens) > 0 and tokens[0] == "EIP":  #check or empty or unrelated lines
+                    inst_addr = tokens[2]   #third element of each line is the address
+                    instr_len = tokens[1].strip("(:)")     #second element is the length with padded parenthesis and colon
+                    print( "0x" + inst_addr + " (" + instr_len + ")" )  #print the formatted data
+                    cnt += 1
+                line = tracefile.readline()     #read the next line
+    except IOError:
+        print( "Error: could not open trace file" )
+        sys.exit( -1 )
+
+"""
 Function: main
 
 Purpose:
@@ -112,6 +146,7 @@ def main():
     #print team information
     print( "Cache Simulator CS3853 Summer 2020 - Group #13\n" )
     parse_args()
+    parse_trc_file( sys.argv[2] )
 
 if __name__=="__main__":
     main()
