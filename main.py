@@ -126,11 +126,20 @@ def parse_trc_file( filename ):
             cnt = 0
             while line and cnt < 20:    #read until EOF or until line 20
                 tokens = line.split()   #tokenize the line into a list of strings
-                if len(tokens) > 0 and tokens[0] == "EIP":  #check or empty or unrelated lines
+                if len(tokens) > 0 and tokens[0] == "EIP":  #check for empty or unrelated lines
                     inst_addr = tokens[2]   #third element of each line is the address
                     instr_len = tokens[1].strip("(:)")     #second element is the length with padded parenthesis and colon
                     print( "0x" + inst_addr + " (" + instr_len + ")" )  #print the formatted data
                     cnt += 1
+                elif len(tokens) > 0 and tokens[0] != "EIP":
+                    write_addr = tokens[1]
+                    if write_addr != "00000000":
+                        print( "0x" + write_addr + " (04)")
+
+                    read_addr = tokens[4]
+                    if read_addr != "00000000":
+                        print( "0x" + read_addr + " (04)" )
+                
                 line = tracefile.readline()     #read the next line
     except IOError:
         print( "Error: could not open trace file" )
